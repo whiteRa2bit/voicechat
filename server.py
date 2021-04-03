@@ -1,13 +1,13 @@
-#!/usr/bin/python3
-
 import socket
 import threading
+
 from protocol import DataType, Protocol
+
 
 class Server:
     def __init__(self):
             self.ip = socket.gethostbyname(socket.gethostname())
-            while 1:
+            while True:
                 try:
                     self.port = int(input('Enter port number to run on --> '))
 

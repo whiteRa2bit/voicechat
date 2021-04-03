@@ -1,9 +1,11 @@
 import enum
 
+
 class DataType(enum.Enum):
     ClientData = 1
     Handshake = 2
     Disconnect = 3
+
 
 class Protocol:
     CLIENT_DATA_MIN = 0

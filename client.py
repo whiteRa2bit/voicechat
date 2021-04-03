@@ -1,13 +1,14 @@
-#!/usr/bin/python3
 import os
 import sys
-
 import socket
 import threading
+
 import pyaudio
+
 from protocol import DataType, Protocol
 
 FRAMES = []
+
 
 class Client:
     def __init__(self):
