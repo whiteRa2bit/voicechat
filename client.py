@@ -7,8 +7,6 @@ import pyaudio
 
 from protocol import DataType, Protocol
 
-FRAMES = []
-
 
 class Client:
     def __init__(self):
@@ -62,7 +60,6 @@ class Client:
                 message = Protocol(datapacket=data)
                 if message.DataType == DataType.ClientData:
                     self.playing_stream.write(message.data)
-                    FRAMES.append(data)
             except:
                 pass
 
@@ -102,12 +99,12 @@ class Client:
 
         message = Protocol(dataType=DataType.Disconnect, data=self.name.encode(encoding='UTF-8'))
         self.s.sendto(message.out(), self.server)
-
         self.connected = False
 
     @staticmethod
     def terminate():
         print("Succesfuly disconnected")
         os._exit(1)
+
 
 client = Client()
